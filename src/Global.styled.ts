@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+interface IProps {
+  imagePaths: {
+    desktop?: string;
+    tablet?: string;
+    mobile?: string;
+  };
+}
+
+const GlobalStyle = createGlobalStyle<IProps>`
 
 //  Edited version of CSS rest by Andy Bell
 //  https://piccalil.li/blog/a-modern-css-reset/
@@ -59,6 +67,24 @@ svg {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------ */
+/* Styles             */
+/* ------------------ */
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-image: url(${({ imagePaths }) => imagePaths.desktop});
+
+  @media (max-width: 768px) {
+    background-image: url(${({ imagePaths }) => imagePaths.tablet});
+  }
+
+  @media (max-width: 375px) {
+    background-image: url(${({ imagePaths }) => imagePaths.mobile});
   }
 }
 `;

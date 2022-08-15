@@ -80,6 +80,10 @@ svg {
   --clr-light: 231 77% 90%;
   --clr-dark: 230 35% 7%;
 
+  --ff-bellefair: "Bellefair", serif;
+  --ff-barlow: "Barlow", sans-serif;
+  --ff-barlow-condensed: "Barlow Condensed", sans-serif;
+
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;
   --fs-700: 1.75rem;

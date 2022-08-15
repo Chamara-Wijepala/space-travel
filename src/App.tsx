@@ -3,10 +3,10 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import GlobalStyle from "./Global.styled";
 
-const Home = lazy(() => import("./pages/Home"));
-const Destination = lazy(() => import("./pages/Destination"));
-const Crew = lazy(() => import("./pages/Crew"));
-const Technology = lazy(() => import("./pages/Technology"));
+const Home = lazy(() => import("pages/Home"));
+const Destination = lazy(() => import("pages/Destination"));
+const Crew = lazy(() => import("pages/Crew"));
+const Technology = lazy(() => import("pages/Technology"));
 
 const loading = <div>Loading...</div>;
 

@@ -10,7 +10,7 @@ function Header() {
         <img src={logo} alt="Logo" />
       </div>
 
-      <S.Nav>
+      <S.Nav className="glass-morphism">
         <NavLink to="/">
           <span>00</span> HOME
         </NavLink>

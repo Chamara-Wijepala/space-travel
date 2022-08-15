@@ -150,6 +150,7 @@ button {
 /* ------------------ */
 
 body {
+  color: hsl(var(--clr-white));
   background-size: cover;
   background-position: center;
   background-image: url(${({ imagePaths }) => imagePaths.desktop});

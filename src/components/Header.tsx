@@ -1,16 +1,37 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import logo from "assets/shared/logo.svg";
 import * as S from "./styles/Header.styled";
 
 function Header() {
+  const [navToggleState, setNavToggleState] = useState(false);
+
+  const handleNavToggle = () => {
+    setNavToggleState(!navToggleState);
+  };
+
   return (
     <S.Header>
       <div>
         <img src={logo} alt="Logo" />
       </div>
 
-      <S.Nav className="glass-morphism">
+      <S.NavToggle
+        aria-controls="primary-navigation"
+        navToggleState={navToggleState}
+        onClick={handleNavToggle}
+      >
+        <span aria-expanded={navToggleState} className="sr-only">
+          Menu
+        </span>
+      </S.NavToggle>
+
+      <S.Nav
+        navToggleState={navToggleState}
+        id="primary-navigation"
+        className="glass-morphism"
+      >
         <NavLink to="/">
           <span>00</span> HOME
         </NavLink>

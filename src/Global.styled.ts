@@ -97,7 +97,7 @@ svg {
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     --fs-800: 5rem;
     --fs-600: 2.5rem;
     --fs-500: 2rem;
@@ -105,7 +105,7 @@ svg {
 
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 90em) {
     --fs-800: 6.25rem;
     --fs-600: 4rem;
     --fs-400: 1.75rem;
@@ -122,11 +122,11 @@ body {
   background-position: center;
   background-image: url(${({ imagePaths }) => imagePaths.desktop});
 
-  @media (max-width: 768px) {
+  @media (max-width: 48em) {
     background-image: url(${({ imagePaths }) => imagePaths.tablet});
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 23.44em) {
     background-image: url(${({ imagePaths }) => imagePaths.mobile});
   }
 }

@@ -114,6 +114,24 @@ svg {
 }
 
 /* ------------------ */
+/* Utility Classed    */
+/* ------------------ */
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.glass-morphism {
+  background: hsl(var(--clr-white) / .04);
+  backdrop-filter: blur(1.5rem);
+}
+
+/* ------------------ */
 /* Styles             */
 /* ------------------ */
 

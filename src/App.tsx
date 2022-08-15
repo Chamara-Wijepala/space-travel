@@ -2,6 +2,7 @@ import { Suspense, lazy, useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Spinner from "components/Spinner";
+import Header from "components/Header";
 import GlobalStyle from "./Global.styled";
 
 const Home = lazy(() => import("pages/Home"));
@@ -38,6 +39,7 @@ function App() {
   return (
     <>
       <GlobalStyle imagePaths={imagePaths} />
+      <Header />
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -13,9 +13,9 @@ function Header() {
 
   return (
     <S.Header>
-      <div>
+      <S.LogoContainer>
         <img src={logo} alt="Logo" />
-      </div>
+      </S.LogoContainer>
 
       <S.NavToggle
         aria-controls="primary-navigation"

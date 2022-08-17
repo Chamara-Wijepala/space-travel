@@ -149,6 +149,10 @@ button {
 /* Styles             */
 /* ------------------ */
 
+#root {
+  overflow: hidden;
+}
+
 body {
   color: hsl(var(--clr-white));
   background-size: cover;

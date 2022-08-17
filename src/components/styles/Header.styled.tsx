@@ -48,7 +48,7 @@ export const LogoContainer = styled.div`
 
 export const Nav = styled.nav<INavToggleState>`
   display: flex;
-  gap: 2rem;
+  gap: clamp(2rem, 5vw, 3rem);
   padding-left: 7.5rem;
 
   a {

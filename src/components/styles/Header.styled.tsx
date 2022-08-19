@@ -52,6 +52,7 @@ export const LogoContainer = styled.div`
 `;
 
 export const Nav = styled.nav<INavToggleState>`
+  color: hsl(var(--clr-white));
   display: flex;
   gap: clamp(2rem, 5vw, 3rem);
   padding-left: 7.5rem;

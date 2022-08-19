@@ -23,7 +23,6 @@ export const Home = styled(GridContainer)`
 `;
 
 export const Hero = styled.div`
-  color: hsl(var(--clr-light));
   max-width: 50ch;
 
   h1 {

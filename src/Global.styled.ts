@@ -158,7 +158,7 @@ button {
 
 body {
   font-family: var(--ff-barlow);
-  color: hsl(var(--clr-white));
+  color: hsl(var(--clr-light));
   background-size: cover;
   background-position: center;
   background-image: url(${({ imagePaths }) => imagePaths.desktop});

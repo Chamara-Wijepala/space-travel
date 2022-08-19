@@ -10,7 +10,11 @@ interface INavToggleState {
 export const Header = styled.header`
   min-height: 6rem;
   display: grid;
-  grid-template-columns: 1fr minmax(7em, 38em) minmax(27em, 52em) 1fr;
+  grid-template-columns:
+    minmax(1.5rem, 1fr)
+    minmax(7em, 38em)
+    minmax(27em, 52em)
+    1fr;
 
   > :first-child {
     grid-column: 2;
@@ -29,16 +33,12 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
 
-  img {
-    padding-left: 1.5rem;
-  }
-
   @media (min-width: 90em) {
     ::after {
       content: "";
       position: relative;
       z-index: 1000;
-      width: 80%;
+      width: 87%;
       height: 1px;
       left: 4rem;
       background: hsl(var(--clr-white) / 0.25);

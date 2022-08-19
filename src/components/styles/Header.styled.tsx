@@ -10,18 +10,23 @@ interface INavToggleState {
 export const Header = styled.header`
   min-height: 6rem;
   display: grid;
-  grid-template-columns:
-    minmax(1.5rem, 1fr)
-    minmax(7em, 38em)
-    minmax(27em, 52em)
-    1fr;
+  padding-left: 1.5rem;
 
-  > :first-child {
-    grid-column: 2;
-  }
+  @media (min-width: 35em) {
+    padding-left: 0;
+    grid-template-columns:
+      minmax(1.5rem, 1fr)
+      minmax(7em, 38em)
+      minmax(27em, 52em)
+      1fr;
 
-  > :last-child {
-    grid-column: 3 / -1;
+    > :first-child {
+      grid-column: 2;
+    }
+
+    > :last-child {
+      grid-column: 3 / -1;
+    }
   }
 
   @media (min-width: 90em) {

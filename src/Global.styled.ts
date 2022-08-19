@@ -151,9 +151,13 @@ button {
 
 #root {
   overflow: hidden;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 
 body {
+  font-family: var(--ff-barlow);
   color: hsl(var(--clr-white));
   background-size: cover;
   background-position: center;

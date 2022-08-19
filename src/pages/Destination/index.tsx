@@ -1,13 +1,14 @@
 import moon from "assets/destination/image-moon.webp";
 
+import NumberedTitle from "styles/NumberedTitle";
 import * as S from "./style";
 
 function index() {
   return (
     <S.Destination>
-      <h1>
+      <NumberedTitle>
         <span aria-hidden="true">01</span>PICK YOUR DESTINATION
-      </h1>
+      </NumberedTitle>
 
       <img src={moon} alt="THE MOON" />
 

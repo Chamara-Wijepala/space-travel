@@ -36,7 +36,7 @@ html:focus-within {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -151,7 +151,7 @@ button {
 
 #root {
   overflow: hidden;
-  min-height: 100%;
+  min-height: inherit;
   display: grid;
   grid-template-rows: min-content 1fr;
 }

@@ -45,6 +45,7 @@ body {
 }
 
 a {
+  outline: none;
   text-decoration: none;
   color: inherit;
 }

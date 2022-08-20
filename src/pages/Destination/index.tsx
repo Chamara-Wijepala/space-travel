@@ -12,14 +12,14 @@ function index() {
 
       <img src={moon} alt="THE MOON" />
 
-      <div>
+      <S.TabList>
         <button type="button">MOON</button>
         <button type="button">MARS</button>
         <button type="button">EUROPA</button>
         <button type="button">TITAN</button>
-      </div>
+      </S.TabList>
 
-      <article>
+      <S.Article>
         <h2>MOON</h2>
 
         <p>
@@ -29,7 +29,7 @@ function index() {
           landing sites.
         </p>
 
-        <div>
+        <S.Meta>
           <div>
             <h3>AVG. DISTANCE</h3>
             <p>384,400 KM</p>
@@ -38,8 +38,8 @@ function index() {
             <h3>EST. TRAVEL TIME</h3>
             <p>3 DAYS</p>
           </div>
-        </div>
-      </article>
+        </S.Meta>
+      </S.Article>
     </S.Destination>
   );
 }

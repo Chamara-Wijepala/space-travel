@@ -1,6 +1,8 @@
 import { Suspense, lazy, useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
+import data from "data/data.json";
+
 import Spinner from "components/Spinner";
 import Header from "components/Header";
 import GlobalStyle from "./Global.styled";
@@ -43,7 +45,10 @@ function App() {
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/destination" element={<Destination />} />
+          <Route
+            path="/destination"
+            element={<Destination data={data.destinations} />}
+          />
           <Route path="/crew" element={<Crew />} />
           <Route path="/technology" element={<Technology />} />
         </Routes>

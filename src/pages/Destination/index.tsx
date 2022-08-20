@@ -1,44 +1,96 @@
-import moon from "assets/destination/image-moon.webp";
+import { useState, MouseEvent } from "react";
+
+import moonImage from "assets/destination/image-moon.webp";
+import marsImage from "assets/destination/image-mars.webp";
+import europaImage from "assets/destination/image-europa.webp";
+import titanImage from "assets/destination/image-titan.webp";
 
 import NumberedTitle from "styles/NumberedTitle";
 import * as S from "./style";
 
-function index() {
+interface DestinationItem {
+  name: string;
+  image?: string;
+  description: string;
+  distance: string;
+  travel: string;
+}
+
+interface IProps {
+  data: DestinationItem[];
+}
+
+function index({ data }: IProps) {
+  const [moon, mars, europa, titan] = data;
+  const [currentDestination, setCurrentDestination] = useState(moon);
+
+  moon.image = moonImage;
+  mars.image = marsImage;
+  europa.image = europaImage;
+  titan.image = titanImage;
+
+  const handleTabChange = (event: MouseEvent<HTMLButtonElement>) => {
+    const targetTab = event.target as HTMLElement;
+    const tabName = targetTab.innerHTML;
+
+    switch (tabName) {
+      case "moon":
+        setCurrentDestination(moon);
+        break;
+      case "mars":
+        setCurrentDestination(mars);
+        break;
+      case "europa":
+        setCurrentDestination(europa);
+        break;
+      case "titan":
+        setCurrentDestination(titan);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <S.Destination>
       <NumberedTitle>
         <span aria-hidden="true">01</span>PICK YOUR DESTINATION
       </NumberedTitle>
 
-      <img src={moon} alt="THE MOON" />
+      <img
+        src={currentDestination.image}
+        alt={currentDestination.name}
+        className="uppercase"
+      />
 
       <S.TabList>
-        <button type="button" className="active">
-          MOON
+        <button type="button" onClick={handleTabChange} className="uppercase">
+          moon
         </button>
-        <button type="button">MARS</button>
-        <button type="button">EUROPA</button>
-        <button type="button">TITAN</button>
+        <button type="button" onClick={handleTabChange} className="uppercase">
+          mars
+        </button>
+        <button type="button" onClick={handleTabChange} className="uppercase">
+          europa
+        </button>
+        <button type="button" onClick={handleTabChange} className="uppercase">
+          titan
+        </button>
       </S.TabList>
 
       <S.Article>
-        <h2>MOON</h2>
+        <h2 className="uppercase">{currentDestination.name}</h2>
 
-        <p>
-          See our planet as you’ve never seen it before. A perfect relaxing trip
-          away to help regain perspective and come back refreshed. While you’re
-          there, take in some history by visiting the Luna 2 and Apollo 11
-          landing sites.
-        </p>
+        <p>{currentDestination.description}</p>
 
-        <S.Meta>
+        <S.Meta className="uppercase">
           <div>
             <h3>AVG. DISTANCE</h3>
-            <p>384,400 KM</p>
+            <p>{currentDestination.distance}</p>
           </div>
           <div>
             <h3>EST. TRAVEL TIME</h3>
-            <p>3 DAYS</p>
+            <p>{currentDestination.travel}</p>
           </div>
         </S.Meta>
       </S.Article>

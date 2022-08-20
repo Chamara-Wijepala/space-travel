@@ -146,6 +146,10 @@ button {
   backdrop-filter: blur(1.5rem);
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 /* ------------------ */
 /* Styles             */
 /* ------------------ */

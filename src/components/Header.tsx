@@ -28,6 +28,7 @@ function Header() {
       </S.NavToggle>
 
       <S.Nav
+        as="nav"
         navToggleState={navToggleState}
         id="primary-navigation"
         className="glass-morphism"

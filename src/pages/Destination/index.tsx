@@ -13,7 +13,9 @@ function index() {
       <img src={moon} alt="THE MOON" />
 
       <S.TabList>
-        <button type="button">MOON</button>
+        <button type="button" className="active">
+          MOON
+        </button>
         <button type="button">MARS</button>
         <button type="button">EUROPA</button>
         <button type="button">TITAN</button>

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import UnderlineIndicators from "styles/UnderlineIndicators";
+
 import hamburgerIcon from "assets/shared/icon-hamburger.svg";
 import closeIcon from "assets/shared/icon-close.svg";
 
@@ -51,7 +53,7 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const Nav = styled.nav<INavToggleState>`
+export const Nav = styled(UnderlineIndicators)<INavToggleState>`
   color: hsl(var(--clr-white));
   display: flex;
   gap: clamp(2rem, 5vw, 3rem);
@@ -64,20 +66,10 @@ export const Nav = styled.nav<INavToggleState>`
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    border-bottom: 3px solid hsl(var(--clr-white) / 0);
-    transition: border-bottom 0.3s ease-in-out;
 
     span {
       font-weight: bold;
     }
-
-    :hover {
-      border-bottom: 3px solid hsl(var(--clr-white) / 0.5);
-    }
-  }
-
-  a.active {
-    border-bottom: 3px solid hsl(var(--clr-white));
   }
 
   @media (min-width: 35em) and (max-width: 89.99em) {

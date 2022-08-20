@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import GridContainer from "styles/GridContainer";
+import UnderlineIndicators from "styles/UnderlineIndicators";
 
 export const Destination = styled(GridContainer)`
   padding-bottom: 3.5rem;
@@ -44,8 +45,16 @@ export const Destination = styled(GridContainer)`
   }
 `;
 
-export const TabList = styled.div`
+export const TabList = styled(UnderlineIndicators)`
   grid-area: tabs;
+  min-height: 2.5rem;
+  letter-spacing: var(--spacing-1);
+  display: flex;
+  gap: 2rem;
+
+  @media (min-width: 35em) {
+    letter-spacing: var(--spacing-2);
+  }
 `;
 
 export const Article = styled.article`

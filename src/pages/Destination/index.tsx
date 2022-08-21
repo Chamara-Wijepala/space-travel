@@ -1,4 +1,5 @@
-import { useState, MouseEvent } from "react";
+import { useState, useEffect, MouseEvent } from "react";
+import clsx from "clsx";
 
 import moonImage from "assets/destination/image-moon.webp";
 import marsImage from "assets/destination/image-mars.webp";
@@ -23,6 +24,7 @@ interface IProps {
 function index({ data }: IProps) {
   const [moon, mars, europa, titan] = data;
   const [currentDestination, setCurrentDestination] = useState(moon);
+  const [currentTab, setCurrentTab] = useState("moon");
 
   moon.image = moonImage;
   mars.image = marsImage;
@@ -31,9 +33,12 @@ function index({ data }: IProps) {
 
   const handleTabChange = (event: MouseEvent<HTMLButtonElement>) => {
     const targetTab = event.target as HTMLElement;
-    const tabName = targetTab.innerHTML;
 
-    switch (tabName) {
+    setCurrentTab(targetTab.innerHTML);
+  };
+
+  useEffect(() => {
+    switch (currentTab) {
       case "moon":
         setCurrentDestination(moon);
         break;
@@ -49,7 +54,7 @@ function index({ data }: IProps) {
       default:
         break;
     }
-  };
+  }, [currentTab]);
 
   return (
     <S.Destination>
@@ -64,16 +69,32 @@ function index({ data }: IProps) {
       />
 
       <S.TabList>
-        <button type="button" onClick={handleTabChange} className="uppercase">
+        <button
+          type="button"
+          onClick={handleTabChange}
+          className={clsx("uppercase", currentTab === "moon" && "active")}
+        >
           moon
         </button>
-        <button type="button" onClick={handleTabChange} className="uppercase">
+        <button
+          type="button"
+          onClick={handleTabChange}
+          className={clsx("uppercase", currentTab === "mars" && "active")}
+        >
           mars
         </button>
-        <button type="button" onClick={handleTabChange} className="uppercase">
+        <button
+          type="button"
+          onClick={handleTabChange}
+          className={clsx("uppercase", currentTab === "europa" && "active")}
+        >
           europa
         </button>
-        <button type="button" onClick={handleTabChange} className="uppercase">
+        <button
+          type="button"
+          onClick={handleTabChange}
+          className={clsx("uppercase", currentTab === "titan" && "active")}
+        >
           titan
         </button>
       </S.TabList>

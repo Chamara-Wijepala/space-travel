@@ -20,6 +20,7 @@ export const Destination = styled(GridContainer)`
   img {
     grid-area: image;
     max-width: 60%;
+    align-self: start;
   }
 
   @media (min-width: 35em) {

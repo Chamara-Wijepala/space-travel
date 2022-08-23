@@ -5,6 +5,8 @@ import specialistImage from "assets/crew/image-mark-shuttleworth.webp";
 import pilotImage from "assets/crew/image-victor-glover.webp";
 import engineerImage from "assets/crew/image-anousheh-ansari.webp";
 
+import * as S from "./style";
+
 interface CrewMember {
   name: string;
   image?: string;
@@ -26,14 +28,14 @@ function index({ data }: IProps) {
   engineer.image = engineerImage;
 
   return (
-    <main>
-      <h1>
+    <S.Main className="grid-container">
+      <h1 className="numbered-title">
         <span aria-hidden="true">02</span>MEET YOUR CREW
       </h1>
 
       <img src={currentCrewMember.image} alt={`${currentCrewMember.name}`} />
 
-      <div>
+      <S.TabPanel>
         <button type="button">
           <span className="sr-only">the commander</span>
         </button>
@@ -46,16 +48,16 @@ function index({ data }: IProps) {
         <button type="button">
           <span className="sr-only">the flight engineer</span>
         </button>
-      </div>
+      </S.TabPanel>
 
-      <article>
+      <S.Article>
         <header>
           <h2 className="uppercase">{currentCrewMember.role}</h2>
           <p>{currentCrewMember.name}</p>
         </header>
         <p>{currentCrewMember.bio}</p>
-      </article>
-    </main>
+      </S.Article>
+    </S.Main>
   );
 }
 

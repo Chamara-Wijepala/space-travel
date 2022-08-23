@@ -53,7 +53,7 @@ function index({ data }: IProps) {
   }, [currentTab]);
 
   return (
-    <S.Destination className="grid-container">
+    <S.Main className="grid-container">
       <h1 className="numbered-title">
         <span aria-hidden="true">01</span>PICK YOUR DESTINATION
       </h1>
@@ -99,7 +99,7 @@ function index({ data }: IProps) {
           </div>
         </S.Meta>
       </S.Article>
-    </S.Destination>
+    </S.Main>
   );
 }
 

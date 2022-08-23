@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Home = styled.main`
+export const Main = styled.main`
   row-gap: 2rem;
 
   @media (min-width: 90em) {

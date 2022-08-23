@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Destination = styled.main`
+export const Main = styled.main`
   padding-bottom: 3.5rem;
   gap: 2rem;
   grid-template-areas:

@@ -46,7 +46,7 @@ export const Destination = styled(GridContainer)`
   }
 `;
 
-export const TabList = styled(UnderlineIndicators)`
+export const TabPanel = styled(UnderlineIndicators)`
   grid-area: tabs;
   min-height: 2.5rem;
   letter-spacing: var(--spacing-1);

@@ -65,7 +65,7 @@ function index({ data }: IProps) {
         className="uppercase"
       />
 
-      <S.TabList>
+      <S.TabPanel>
         {data.map((destination) => (
           <button
             type="button"
@@ -82,7 +82,7 @@ function index({ data }: IProps) {
             {destination.name}
           </button>
         ))}
-      </S.TabList>
+      </S.TabPanel>
 
       <S.Article>
         <h2 className="uppercase">{currentDestination.name}</h2>

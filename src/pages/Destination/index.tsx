@@ -10,6 +10,7 @@ import NumberedTitle from "styles/NumberedTitle";
 import * as S from "./style";
 
 interface DestinationItem {
+  id: number;
   name: string;
   image?: string;
   description: string;
@@ -24,7 +25,7 @@ interface IProps {
 function index({ data }: IProps) {
   const [moon, mars, europa, titan] = data;
   const [currentDestination, setCurrentDestination] = useState(moon);
-  const [currentTab, setCurrentTab] = useState("moon");
+  const [currentTab, setCurrentTab] = useState(0);
 
   moon.image = moonImage;
   mars.image = marsImage;
@@ -33,22 +34,23 @@ function index({ data }: IProps) {
 
   const handleTabChange = (event: MouseEvent<HTMLButtonElement>) => {
     const targetTab = event.target as HTMLElement;
+    const tabIndex = Number(targetTab.getAttribute("data-index"));
 
-    setCurrentTab(targetTab.innerHTML);
+    setCurrentTab(tabIndex);
   };
 
   useEffect(() => {
     switch (currentTab) {
-      case "moon":
+      case 0:
         setCurrentDestination(moon);
         break;
-      case "mars":
+      case 1:
         setCurrentDestination(mars);
         break;
-      case "europa":
+      case 2:
         setCurrentDestination(europa);
         break;
-      case "titan":
+      case 3:
         setCurrentDestination(titan);
         break;
       default:
@@ -69,34 +71,20 @@ function index({ data }: IProps) {
       />
 
       <S.TabList>
-        <button
-          type="button"
-          onClick={handleTabChange}
-          className={clsx("uppercase", currentTab === "moon" && "active")}
-        >
-          moon
-        </button>
-        <button
-          type="button"
-          onClick={handleTabChange}
-          className={clsx("uppercase", currentTab === "mars" && "active")}
-        >
-          mars
-        </button>
-        <button
-          type="button"
-          onClick={handleTabChange}
-          className={clsx("uppercase", currentTab === "europa" && "active")}
-        >
-          europa
-        </button>
-        <button
-          type="button"
-          onClick={handleTabChange}
-          className={clsx("uppercase", currentTab === "titan" && "active")}
-        >
-          titan
-        </button>
+        {data.map((destination) => (
+          <button
+            type="button"
+            key={destination.id}
+            data-index={destination.id}
+            onClick={handleTabChange}
+            className={clsx(
+              "uppercase",
+              currentTab === destination.id && "active"
+            )}
+          >
+            {destination.name}
+          </button>
+        ))}
       </S.TabList>
 
       <S.Article>

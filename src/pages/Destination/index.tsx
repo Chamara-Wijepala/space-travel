@@ -1,5 +1,7 @@
-import { useState, useEffect, MouseEvent } from "react";
+import { useState, useEffect } from "react";
 import clsx from "clsx";
+
+import handleTabChange from "utils/handleTabChange";
 
 import moonImage from "assets/destination/image-moon.webp";
 import marsImage from "assets/destination/image-mars.webp";
@@ -31,13 +33,6 @@ function index({ data }: IProps) {
   mars.image = marsImage;
   europa.image = europaImage;
   titan.image = titanImage;
-
-  const handleTabChange = (event: MouseEvent<HTMLButtonElement>) => {
-    const targetTab = event.target as HTMLElement;
-    const tabIndex = Number(targetTab.getAttribute("data-index"));
-
-    setCurrentTab(tabIndex);
-  };
 
   useEffect(() => {
     switch (currentTab) {
@@ -76,7 +71,9 @@ function index({ data }: IProps) {
             type="button"
             key={destination.id}
             data-index={destination.id}
-            onClick={handleTabChange}
+            onClick={(e) => {
+              handleTabChange(e, setCurrentTab);
+            }}
             className={clsx(
               "uppercase",
               currentTab === destination.id && "active"

@@ -25,7 +25,7 @@ export const Hero = styled.div`
 
   h1 {
     font-family: var(--ff-barlow-condensed);
-    font-size: var(--fs-400);
+    font-size: var(--fs-300);
     letter-spacing: var(--spacing-3);
   }
 

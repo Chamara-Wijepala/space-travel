@@ -116,15 +116,15 @@ button {
     --fs-800: 5rem;
     --fs-600: 2.5rem;
     --fs-500: 2rem;
-    --fs-400: 1.25rem;
-
+    --fs-400: 1.5rem;
+    --fs-300: 1.25rem;
   }
 
   @media (min-width: 90em) {
     --fs-800: 6.25rem;
     --fs-600: 4rem;
-    --fs-400: 1.75rem;
-
+    --fs-400: 2rem;
+    --fs-300: 1.75rem
   }
 }
 

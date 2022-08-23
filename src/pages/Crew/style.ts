@@ -43,4 +43,24 @@ export const TabPanel = styled.div`
 
 export const Article = styled.article`
   grid-area: content;
+
+  header {
+    h2 {
+      font-size: var(--fs-400);
+      color: hsl(var(--clr-white) / 0.5);
+    }
+
+    p {
+      font-size: var(--fs-600);
+      color: hsl(var(--clr-white));
+    }
+  }
+
+  p {
+    max-width: 50ch;
+  }
+
+  @media (min-width: 90em) {
+    justify-self: start;
+  }
 `;

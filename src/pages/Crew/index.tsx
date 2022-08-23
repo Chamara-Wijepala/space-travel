@@ -53,7 +53,7 @@ function index({ data }: IProps) {
       <S.Article>
         <header>
           <h2 className="uppercase">{currentCrewMember.role}</h2>
-          <p>{currentCrewMember.name}</p>
+          <p className="uppercase">{currentCrewMember.name}</p>
         </header>
         <p>{currentCrewMember.bio}</p>
       </S.Article>

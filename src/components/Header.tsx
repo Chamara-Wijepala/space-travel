@@ -31,7 +31,7 @@ function Header() {
         as="nav"
         navToggleState={navToggleState}
         id="primary-navigation"
-        className="glass-morphism"
+        className="glass-morphism underline-indicators"
       >
         <NavLink to="/">
           <span>00</span> HOME

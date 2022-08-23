@@ -8,7 +8,6 @@ import marsImage from "assets/destination/image-mars.webp";
 import europaImage from "assets/destination/image-europa.webp";
 import titanImage from "assets/destination/image-titan.webp";
 
-import NumberedTitle from "styles/NumberedTitle";
 import * as S from "./style";
 
 interface DestinationItem {
@@ -54,10 +53,10 @@ function index({ data }: IProps) {
   }, [currentTab]);
 
   return (
-    <S.Destination>
-      <NumberedTitle>
+    <S.Destination className="grid-container">
+      <h1 className="numbered-title">
         <span aria-hidden="true">01</span>PICK YOUR DESTINATION
-      </NumberedTitle>
+      </h1>
 
       <img
         src={currentDestination.image}
@@ -65,7 +64,7 @@ function index({ data }: IProps) {
         className="uppercase"
       />
 
-      <S.TabPanel>
+      <S.TabPanel className="underline-indicators">
         {data.map((destination) => (
           <button
             type="button"

@@ -2,7 +2,7 @@ import * as S from "./style";
 
 function index() {
   return (
-    <S.Home>
+    <S.Home className="grid-container">
       <S.Hero>
         <h1>
           SO, YOU WANT TO TRAVEL TO <br /> <span>SPACE</span>

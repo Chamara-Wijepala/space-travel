@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-import GridContainer from "styles/GridContainer";
-import UnderlineIndicators from "styles/UnderlineIndicators";
-
-export const Destination = styled(GridContainer)`
+export const Destination = styled.main`
   padding-bottom: 3.5rem;
   gap: 2rem;
   grid-template-areas:
@@ -12,7 +9,6 @@ export const Destination = styled(GridContainer)`
     "tabs"
     "content";
 
-  // NumberedTitle styled component
   h1 {
     grid-area: title;
   }
@@ -46,7 +42,7 @@ export const Destination = styled(GridContainer)`
   }
 `;
 
-export const TabPanel = styled(UnderlineIndicators)`
+export const TabPanel = styled.div`
   grid-area: tabs;
   min-height: 2.5rem;
   letter-spacing: var(--spacing-1);

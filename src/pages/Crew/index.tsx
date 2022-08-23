@@ -5,8 +5,6 @@ import specialistImage from "assets/crew/image-mark-shuttleworth.webp";
 import pilotImage from "assets/crew/image-victor-glover.webp";
 import engineerImage from "assets/crew/image-anousheh-ansari.webp";
 
-import NumberedTitle from "styles/NumberedTitle";
-
 interface CrewMember {
   name: string;
   image?: string;
@@ -29,9 +27,9 @@ function index({ data }: IProps) {
 
   return (
     <main>
-      <NumberedTitle>
+      <h1>
         <span aria-hidden="true">02</span>MEET YOUR CREW
-      </NumberedTitle>
+      </h1>
 
       <img src={currentCrewMember.image} alt={`${currentCrewMember.name}`} />
 

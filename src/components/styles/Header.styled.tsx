@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import UnderlineIndicators from "styles/UnderlineIndicators";
-
 import hamburgerIcon from "assets/shared/icon-hamburger.svg";
 import closeIcon from "assets/shared/icon-close.svg";
 
@@ -53,7 +51,7 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const Nav = styled(UnderlineIndicators)<INavToggleState>`
+export const Nav = styled.nav<INavToggleState>`
   color: hsl(var(--clr-white));
   display: flex;
   gap: clamp(2rem, 5vw, 3rem);

@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import GridContainer from "styles/GridContainer";
-
-export const Home = styled(GridContainer)`
+export const Home = styled.main`
   row-gap: 2rem;
 
   @media (min-width: 90em) {

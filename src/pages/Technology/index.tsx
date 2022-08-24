@@ -50,7 +50,7 @@ function index({ data }: IProps) {
       </S.Picture>
 
       <S.Container>
-        <S.TabPanel>
+        <S.TabPanel className="numbered-indicators">
           {data.map((item) => (
             <button type="button" key={item.id}>
               {item.id + 1}

@@ -243,6 +243,31 @@ body {
     background-color: hsl(var(--clr-white));
   }
 }
+
+.numbered-indicators {
+  > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(0.5em, 5vw, 1em);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid hsl(var(--clr-white) / 0.25);
+    font-family: var(--ff-bellefair);
+    font-size: clamp(1rem, 5vw, 2rem);
+    transition: border 0.3s ease-in-out;
+  }
+
+  > :focus,
+  > :hover {
+    border: 1px solid hsl(var(--clr-white));
+  }
+
+  > .active {
+    color: hsl(var(--clr-dark));
+    background-color: hsl(var(--clr-white));
+  }
+}
 `;
 
 export default GlobalStyle;

@@ -48,14 +48,25 @@ export const Picture = styled.picture`
 
 export const Container = styled.div`
   grid-area: container;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 5vw, 5rem);
 
   @media (min-width: 90em) {
-    display: flex;
-    gap: 5rem;
+    flex-direction: row;
   }
 `;
 
-export const TabPanel = styled.div``;
+export const TabPanel = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  @media (min-width: 90em) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+`;
 
 export const Article = styled.article`
   display: flex;

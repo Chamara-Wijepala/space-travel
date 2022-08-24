@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Main = styled.main`
   row-gap: 2rem;
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     padding-bottom: 8rem;
     align-items: end;
 
@@ -39,7 +39,7 @@ export const Hero = styled.div`
     line-height: 2rem;
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     text-align: start;
   }
 `;

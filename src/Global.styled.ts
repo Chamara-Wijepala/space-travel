@@ -120,7 +120,7 @@ button {
     --fs-300: 1.25rem;
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     --fs-800: 6.25rem;
     --fs-600: 4rem;
     --fs-400: 2rem;
@@ -183,7 +183,7 @@ body {
   place-items: center;
   text-align: center;
   
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     grid-template-columns: 1fr repeat(2, minmax(0, 35rem)) 1fr;
   }
 }
@@ -209,7 +209,7 @@ body {
     letter-spacing: var(--spacing-2);
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     letter-spacing: var(--spacing-3);
   }
 }

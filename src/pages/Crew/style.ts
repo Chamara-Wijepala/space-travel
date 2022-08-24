@@ -24,7 +24,7 @@ export const Main = styled.main`
       "image";
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     text-align: start;
     grid-template-columns: 1fr minmax(0, 50rem) minmax(0, 25rem) 1fr;
     grid-template-areas:
@@ -44,7 +44,7 @@ export const ImageContainer = styled.div`
     max-width: 75%;
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     grid-column: span 2;
     justify-self: start;
     align-self: end;
@@ -64,7 +64,7 @@ export const TabPanel = styled.div`
     margin-block: 2rem;
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     justify-self: start;
     gap: 1.5rem;
   }
@@ -91,7 +91,7 @@ export const Article = styled.article`
     max-width: 50ch;
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     justify-self: start;
   }
 `;

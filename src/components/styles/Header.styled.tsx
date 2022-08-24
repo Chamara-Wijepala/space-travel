@@ -29,7 +29,7 @@ export const Header = styled.header`
     }
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     margin-block: 2.5rem;
   }
 `;
@@ -38,7 +38,7 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     ::after {
       content: "";
       position: relative;
@@ -70,7 +70,7 @@ export const Nav = styled.nav<INavToggleState>`
     }
   }
 
-  @media (min-width: 35em) and (max-width: 89.99em) {
+  @media (min-width: 35em) and (max-width: 74.99em) {
     padding-left: 3rem;
 
     a span {

@@ -60,7 +60,7 @@ function index({ data }: IProps) {
 
       <S.Picture>
         <source
-          media="(min-width: 90em)"
+          media="(min-width: 75em)"
           srcSet={currentTechnology.portraitImage}
         />
         <img

@@ -26,7 +26,7 @@ export const Main = styled.main`
     }
   }
 
-  @media (min-width: 90em) {
+  @media (min-width: 75em) {
     align-content: start;
     justify-items: start;
     text-align: start;

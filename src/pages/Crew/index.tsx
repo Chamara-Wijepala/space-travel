@@ -57,7 +57,9 @@ function index({ data }: IProps) {
         <span aria-hidden="true">02</span>MEET YOUR CREW
       </h1>
 
-      <img src={currentCrewMember.image} alt={`${currentCrewMember.name}`} />
+      <S.ImageContainer>
+        <img src={currentCrewMember.image} alt={`${currentCrewMember.name}`} />
+      </S.ImageContainer>
 
       <S.TabPanel className="dot-indicators">
         {data.map((crewMember) => (

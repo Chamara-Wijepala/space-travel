@@ -11,10 +11,6 @@ export const Main = styled.main`
     grid-area: title;
   }
 
-  img {
-    grid-area: image;
-  }
-
   @media (min-width: 35em) {
     h1 {
       justify-self: start;
@@ -30,6 +26,7 @@ export const Main = styled.main`
 
   @media (min-width: 90em) {
     text-align: start;
+    grid-template-columns: 1fr minmax(0, 50rem) minmax(0, 25rem) 1fr;
     grid-template-areas:
       ". title title ."
       ". content image ."
@@ -37,10 +34,35 @@ export const Main = styled.main`
   }
 `;
 
+export const ImageContainer = styled.div`
+  grid-area: image;
+  border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+  display: flex;
+  justify-content: center;
+
+  img {
+    max-width: 75%;
+  }
+
+  @media (min-width: 90em) {
+    grid-column: span 2;
+    justify-self: start;
+    align-self: end;
+
+    img {
+      max-width: 90%;
+    }
+  }
+`;
+
 export const TabPanel = styled.div`
   grid-area: tabs;
   display: flex;
   gap: 1rem;
+
+  @media (min-width: 35em) {
+    margin-block: 2rem;
+  }
 
   @media (min-width: 90em) {
     justify-self: start;

@@ -92,7 +92,7 @@ function index({ data }: IProps) {
             <h2>THE TERMINOLOGY...</h2>
             <p className="uppercase">{currentTechnology.name}</p>
           </header>
-          <p>{currentTechnology.description}</p>
+          <p className="page-description">{currentTechnology.description}</p>
         </S.Article>
       </S.Container>
     </S.Main>

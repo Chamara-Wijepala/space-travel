@@ -188,6 +188,11 @@ body {
   }
 }
 
+.page-description {
+  font-size: 1.125rem;
+  line-height: 2;
+}
+
 .numbered-title {
   color: hsl(var(--clr-white));
   font-family: var(--ff-barlow-condensed);

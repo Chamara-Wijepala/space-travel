@@ -86,7 +86,7 @@ function index({ data }: IProps) {
       <S.Article>
         <h2 className="uppercase">{currentDestination.name}</h2>
 
-        <p>{currentDestination.description}</p>
+        <p className="page-description">{currentDestination.description}</p>
 
         <S.Meta className="uppercase">
           <div>

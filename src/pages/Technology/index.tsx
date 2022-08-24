@@ -7,6 +7,8 @@ import spaceportPortrait from "assets/technology/image-spaceport-portrait.jpg";
 import capsuleLandscape from "assets/technology/image-space-capsule-landscape.jpg";
 import capsulePortrait from "assets/technology/image-space-capsule-portrait.jpg";
 
+import * as S from "./style";
+
 interface ITechnologyItem {
   id: number;
   landscapeImage?: string;
@@ -31,12 +33,12 @@ function index({ data }: IProps) {
   capsule.portraitImage = capsulePortrait;
 
   return (
-    <main className="grid-container">
+    <S.Main className="grid-container">
       <h1 className="numbered-title">
         <span>03</span>SPACE LAUNCH 101
       </h1>
 
-      <picture>
+      <S.Picture>
         <source
           media="(min-width: 90em)"
           srcSet={currentTechnology.portraitImage}
@@ -45,24 +47,26 @@ function index({ data }: IProps) {
           src={currentTechnology.landscapeImage}
           alt={currentTechnology.name}
         />
-      </picture>
+      </S.Picture>
 
-      <div>
-        {data.map((item) => (
-          <button type="button" key={item.id}>
-            {item.id + 1}
-          </button>
-        ))}
-      </div>
+      <S.Container>
+        <S.TabPanel>
+          {data.map((item) => (
+            <button type="button" key={item.id}>
+              {item.id + 1}
+            </button>
+          ))}
+        </S.TabPanel>
 
-      <article>
-        <header>
-          <h2>THE TERMINOLOGY...</h2>
-          <p className="uppercase">{currentTechnology.name}</p>
-        </header>
-        <p>{currentTechnology.description}</p>
-      </article>
-    </main>
+        <S.Article>
+          <header>
+            <h2>THE TERMINOLOGY...</h2>
+            <p className="uppercase">{currentTechnology.name}</p>
+          </header>
+          <p>{currentTechnology.description}</p>
+        </S.Article>
+      </S.Container>
+    </S.Main>
   );
 }
 

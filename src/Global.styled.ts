@@ -225,6 +225,24 @@ body {
     border-bottom: 3px solid hsl(var(--clr-white));
   }
 }
+
+.dot-indicators {
+  > * {
+    padding: 0.5em;
+    border-radius: 50%;
+    background-color: hsl(var(--clr-white) / .17);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  > :focus,
+  > :hover {
+    background-color: hsl(var(--clr-white) / 0.5);
+  }
+
+  > .active {
+    background-color: hsl(var(--clr-white));
+  }
+}
 `;
 
 export default GlobalStyle;

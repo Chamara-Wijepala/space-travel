@@ -39,6 +39,13 @@ export const Main = styled.main`
 
 export const TabPanel = styled.div`
   grid-area: tabs;
+  display: flex;
+  gap: 1rem;
+
+  @media (min-width: 90em) {
+    justify-self: start;
+    gap: 1.5rem;
+  }
 `;
 
 export const Article = styled.article`

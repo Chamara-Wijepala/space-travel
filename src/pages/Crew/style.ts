@@ -54,11 +54,13 @@ export const Article = styled.article`
   header {
     h2 {
       font-size: var(--fs-400);
+      font-family: var(--ff-bellefair);
       color: hsl(var(--clr-white) / 0.5);
     }
 
     p {
       font-size: var(--fs-600);
+      font-family: var(--ff-bellefair);
       color: hsl(var(--clr-white));
     }
   }

@@ -50,7 +50,10 @@ function App() {
             element={<Destination data={data.destinations} />}
           />
           <Route path="/crew" element={<Crew data={data.crew} />} />
-          <Route path="/technology" element={<Technology />} />
+          <Route
+            path="/technology"
+            element={<Technology data={data.technology} />}
+          />
         </Routes>
       </Suspense>
     </>

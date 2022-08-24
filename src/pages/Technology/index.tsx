@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import clsx from "clsx";
+
+import handleTabChange from "utils/handleTabChange";
 
 import vehicleLandscape from "assets/technology/image-launch-vehicle-landscape.jpg";
 import vehiclePortrait from "assets/technology/image-launch-vehicle-portrait.jpg";
@@ -24,6 +27,7 @@ interface IProps {
 function index({ data }: IProps) {
   const [vehicle, spaceport, capsule] = data;
   const [currentTechnology, setCurrentTechnology] = useState(vehicle);
+  const [currentTab, setCurrentTab] = useState(0);
 
   vehicle.landscapeImage = vehicleLandscape;
   vehicle.portraitImage = vehiclePortrait;
@@ -31,6 +35,22 @@ function index({ data }: IProps) {
   spaceport.portraitImage = spaceportPortrait;
   capsule.landscapeImage = capsuleLandscape;
   capsule.portraitImage = capsulePortrait;
+
+  useEffect(() => {
+    switch (currentTab) {
+      case 0:
+        setCurrentTechnology(vehicle);
+        break;
+      case 1:
+        setCurrentTechnology(spaceport);
+        break;
+      case 2:
+        setCurrentTechnology(capsule);
+        break;
+      default:
+        break;
+    }
+  }, [currentTab]);
 
   return (
     <S.Main className="grid-container">
@@ -52,8 +72,17 @@ function index({ data }: IProps) {
       <S.Container>
         <S.TabPanel className="numbered-indicators">
           {data.map((item) => (
-            <button type="button" key={item.id}>
+            <button
+              type="button"
+              key={item.id}
+              data-index={item.id}
+              onClick={(e) => {
+                handleTabChange(e, setCurrentTab);
+              }}
+              className={clsx(currentTab === item.id && "active")}
+            >
               {item.id + 1}
+              <span className="sr-only">{`The ${item.name}`}</span>
             </button>
           ))}
         </S.TabPanel>

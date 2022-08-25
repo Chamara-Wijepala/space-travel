@@ -1,5 +1,6 @@
 import { Suspense, lazy, useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { upperCaseFirst } from "upper-case-first";
 
 import data from "data/data.json";
 
@@ -36,6 +37,13 @@ function App() {
     screenSizes.forEach((size) => {
       getImagePaths(size);
     });
+  }, [location]);
+
+  // Changes document title depending on current page
+  useEffect(() => {
+    const title = location === "" ? "Space Travel" : location;
+
+    document.title = upperCaseFirst(title);
   }, [location]);
 
   return (

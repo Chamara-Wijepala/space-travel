@@ -6,8 +6,7 @@ export const Main = styled.main`
   grid-template-areas:
     "title"
     "image"
-    "tabs"
-    "content";
+    "container";
 
   h1 {
     grid-area: title;
@@ -28,7 +27,6 @@ export const Main = styled.main`
 
   @media (min-width: 75em) {
     align-content: start;
-    justify-items: start;
     text-align: start;
 
     img {
@@ -37,25 +35,35 @@ export const Main = styled.main`
 
     grid-template-areas:
       ". title title ."
-      ". image tabs ."
-      ". image content .";
+      ". image container .";
+  }
+`;
+
+export const Container = styled.div`
+  grid-area: container;
+
+  @media (min-width: 75em) {
+    justify-self: end;
   }
 `;
 
 export const TabPanel = styled.div`
-  grid-area: tabs;
   min-height: 2.5rem;
   letter-spacing: var(--spacing-1);
   display: flex;
+  justify-content: center;
   gap: 2rem;
 
   @media (min-width: 35em) {
     letter-spacing: var(--spacing-2);
   }
+
+  @media (min-width: 75em) {
+    justify-content: start;
+  }
 `;
 
 export const Article = styled.article`
-  grid-area: content;
   max-width: 50ch;
 
   h2 {

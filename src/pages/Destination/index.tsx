@@ -64,41 +64,44 @@ function index({ data }: IProps) {
         className="uppercase"
       />
 
-      <S.TabPanel className="underline-indicators">
-        {data.map((destination) => (
-          <button
-            type="button"
-            key={destination.id}
-            data-index={destination.id}
-            onClick={(e) => {
-              handleTabChange(e, setCurrentTab);
-            }}
-            className={clsx(
-              "uppercase",
-              currentTab === destination.id && "active"
-            )}
-          >
-            {destination.name}
-          </button>
-        ))}
-      </S.TabPanel>
+      <S.Container>
+        <S.TabPanel className="underline-indicators">
+          {data.map((destination) => (
+            <button
+              type="button"
+              key={destination.id}
+              data-index={destination.id}
+              onClick={(e) => {
+                handleTabChange(e, setCurrentTab);
+              }}
+              className={clsx(
+                "uppercase",
+                currentTab === destination.id && "active"
+              )}
+            >
+              {destination.name}
+            </button>
+          ))}
+        </S.TabPanel>
 
-      <S.Article>
-        <h2 className="uppercase">{currentDestination.name}</h2>
+        <S.Article>
+          <h2 className="uppercase">{currentDestination.name}</h2>
 
-        <p className="page-description">{currentDestination.description}</p>
+          <p className="page-description">{currentDestination.description}</p>
 
-        <S.Meta className="uppercase">
-          <div>
-            <h3>AVG. DISTANCE</h3>
-            <p>{currentDestination.distance}</p>
-          </div>
-          <div>
-            <h3>EST. TRAVEL TIME</h3>
-            <p>{currentDestination.travel}</p>
-          </div>
-        </S.Meta>
-      </S.Article>
+          <S.Meta className="uppercase">
+            <div>
+              <h3>AVG. DISTANCE</h3>
+              <p>{currentDestination.distance}</p>
+            </div>
+
+            <div>
+              <h3>EST. TRAVEL TIME</h3>
+              <p>{currentDestination.travel}</p>
+            </div>
+          </S.Meta>
+        </S.Article>
+      </S.Container>
     </S.Main>
   );
 }

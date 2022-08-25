@@ -164,6 +164,7 @@ button {
 body {
   font-family: var(--ff-barlow);
   color: hsl(var(--clr-light));
+  background-color: hsl(var(--clr-dark));
   background-size: cover;
   background-position: center;
   background-image: url(${({ imagePaths }) => imagePaths.desktop});

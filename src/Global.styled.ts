@@ -142,8 +142,12 @@ button {
 }
 
 .glass-morphism {
-  background: hsl(var(--clr-white) / .04);
-  backdrop-filter: blur(1.5rem);
+  background: hsl(var(--clr-dark) / .85);
+
+  @supports (backdrop-filter: blur(1.5rem)) {
+    background: hsl(var(--clr-white) / .04);
+    backdrop-filter: blur(1.5rem);
+  }
 }
 
 .uppercase {

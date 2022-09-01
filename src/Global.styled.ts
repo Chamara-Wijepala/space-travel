@@ -1,5 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
+import barlowWoff from "assets/fonts/barlow-v12-latin-regular.woff";
+import barlowBoldWoff from "assets/fonts/barlow-v12-latin-700.woff";
+import barlowWoff2 from "assets/fonts/barlow-v12-latin-regular.woff2";
+import barlowBoldWoff2 from "assets/fonts/barlow-v12-latin-700.woff2";
+import barlowCondWoff from "assets/fonts/barlow-condensed-v12-latin-regular.woff";
+import barlowCondBoldWoff from "assets/fonts/barlow-condensed-v12-latin-700.woff";
+import barlowCondWoff2 from "assets/fonts/barlow-condensed-v12-latin-regular.woff2";
+import barlowCondBoldWoff2 from "assets/fonts/barlow-condensed-v12-latin-700.woff2";
+import bellefairWoff from "assets/fonts/bellefair-v14-latin-regular.woff";
+import bellefairWoff2 from "assets/fonts/bellefair-v14-latin-regular.woff2";
+
 interface IProps {
   imagePaths: {
     desktop?: string;
@@ -84,6 +95,56 @@ button {
   cursor: pointer;
   outline: inherit;
 }
+
+/* ------------------ */
+/* Custom Fonts  */
+/* ------------------ */
+
+@font-face {
+  font-family: 'Bellefair';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Bellefair"),
+    url(${bellefairWoff2}) format("woff2"),
+    url(${bellefairWoff}) format("woff");
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Barlow"),
+    url(${barlowWoff2}) format("woff2"),
+    url(${barlowWoff}) format("woff");
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Barlow"),
+    url(${barlowBoldWoff2}) format("woff2"),
+    url(${barlowBoldWoff}) format("woff");
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Barlow Condensed"),
+    url(${barlowCondWoff2}) format("woff2"),
+    url(${barlowCondWoff}) format("woff");
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Barlow Condensed"),
+    url(${barlowCondBoldWoff2}) format("woff2"),
+    url(${barlowCondBoldWoff}) format("woff");
+}
+
 
 /* ------------------ */
 /* Custom Properties  */
